@@ -1,0 +1,16 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+#startQuiz, #quizContainer, #resultContainer {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+#choices {
+    text-align: left;
+}
