@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function() {
+
 const questions = [
     {
         question: "Which of the following is NOT a characteristic of prokaryotic cells?",
@@ -56,7 +58,7 @@ let score = 0;
 
 const studentNameInput = document.getElementById("studentName");
 const groupNumberInput = document.getElementById("groupNumber");
-const startQuizButton = document.getElementById("beginQuiz"); 
+const startQuizButton = document.getElementById("beginQuiz");
 const quizContainer = document.getElementById("quizContainer");
 const questionElement = document.getElementById("question");
 const choicesElement = document.getElementById("choices");
@@ -64,9 +66,7 @@ const nextButton = document.getElementById("nextButton");
 const resultContainer = document.getElementById("resultContainer");
 const scoreElement = document.getElementById("score");
 
-// Corrected event listener attachment
-startQuizButton.addEventListener("click", startQuiz); 
-
+startQuizButton.addEventListener("click", startQuiz);
 nextButton.addEventListener("click", () => {
     const selectedChoice = document.querySelector('input[name="choice"]:checked');
     if (selectedChoice) {
@@ -102,7 +102,7 @@ function displayQuestion() {
         const input = document.createElement("input");
         input.type = "radio";
         input.name = "choice";
-        input.value = index; 
+        input.value = index; // Use index as the value for easier comparison later
         label.appendChild(input);
         label.appendChild(document.createTextNode(choice));
         choicesElement.appendChild(label);
@@ -126,15 +126,4 @@ function displayResults() {
     const groupNumber = groupNumberInput.value;
     scoreElement.textContent += `\nName: ${studentName}, Group: ${groupNumber}`;
 }
-// Wait for the DOM to load before executing the script
-document.addEventListener("DOMContentLoaded", function() {
-    // ... (rest of the code: questions, variables, functions are all the same)
- 
-    // Get the start quiz button
-    const startQuizButton = document.getElementById("beginQuiz");
-
-    // Attach event listener to the button
-    startQuizButton.addEventListener("click", startQuiz);
-
-    // ... (rest of the functions are the same)
-});
+}); // End of DOMContentLoaded event listener
