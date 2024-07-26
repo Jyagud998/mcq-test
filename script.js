@@ -126,3 +126,15 @@ function displayResults() {
     const groupNumber = groupNumberInput.value;
     scoreElement.textContent += `\nName: ${studentName}, Group: ${groupNumber}`;
 }
+// Wait for the DOM to load before executing the script
+document.addEventListener("DOMContentLoaded", function() {
+    // ... (rest of the code: questions, variables, functions are all the same)
+ 
+    // Get the start quiz button
+    const startQuizButton = document.getElementById("beginQuiz");
+
+    // Attach event listener to the button
+    startQuizButton.addEventListener("click", startQuiz);
+
+    // ... (rest of the functions are the same)
+});
